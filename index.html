@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우리 동네 공기</title>
+  <!-- 연결된 자바스크립트가 /api/dust를 통해 대기정보를 조회합니다. -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">에어코리아 실시간 대기정보</p>
+      <h1>우리 동네 공기</h1>
+      <div class="controls">
+        <label for="region">조회할 시도</label>
+        <select id="region"></select>
+        <button id="refresh" type="button">새로고침</button>
+      </div>
+    </header>
+    <!-- 평균은 미세먼지 측정값이 있는 측정소만 포함합니다. -->
+    <section class="summary" aria-labelledby="summary-title">
+      <h2 id="summary-title"><span id="region-name">서울</span> 평균 미세먼지</h2>
+      <p class="average"><strong id="average">—</strong> <span>㎍/㎥</span></p>
+      <p id="average-note">측정소 데이터를 불러오면 평균이 표시됩니다.</p>
+    </section>
+    <ul class="legend" aria-label="미세먼지 등급 안내">
+      <li class="good">좋음</li><li class="normal">보통</li>
+      <li class="bad">나쁨</li><li class="very-bad">매우나쁨</li><li class="unknown">등급 정보 없음</li>
+    </ul>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="stations" class="grid" aria-label="측정소 목록" aria-busy="false"></section>
+    <footer>자료 제공: 한국환경공단 에어코리아 · 평균은 조회된 측정소의 단순 산술평균입니다.</footer>
+  </main>
+</body>
+</html>
+

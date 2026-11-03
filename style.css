@@ -1,0 +1,35 @@
+﻿/* 작은 화면에서도 읽기 편하도록 유동적인 카드 격자를 사용합니다. */
+:root { font-family: "맑은 고딕", sans-serif; color: #192d3c; background: #f3f7fa; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.container { max-width: 1120px; margin: auto; padding: 40px 24px; }
+.eyebrow { color: #526b7c; font-size: 14px; }
+h1 { margin: 8px 0 28px; font-size: clamp(28px, 5vw, 42px); }
+.controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+select, button { font: inherit; padding: 12px 18px; border: 1px solid #a8bac8; border-radius: 10px; background: white; color: #192d3c; }
+select { min-width: 160px; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid #1668bd; outline-offset: 3px; }
+.summary { margin: 28px 0 20px; padding: 28px; background: #163f54; border-radius: 20px; color: white; }
+.summary h2 { margin: 0; font-size: 18px; font-weight: 500; }
+.average { margin: 12px 0; }
+.average strong { font-size: clamp(40px, 9vw, 68px); letter-spacing: -2px; }
+.average span, #average-note { color: #d0e1e9; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
+.legend li { padding: 6px 12px; border-radius: 20px; font-size: 13px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 16px; }
+.card { border: 1px solid var(--accent); border-top: 5px solid var(--accent); border-radius: 14px; padding: 22px; }
+.good { --accent: #287ac1; background: #eaf4ff; color: #15558b; }
+.normal { --accent: #288451; background: #edf8ef; color: #20633e; }
+.bad { --accent: #c77513; background: #fff3e1; color: #874b09; }
+.very-bad { --accent: #c34343; background: #fff0f0; color: #9c3030; }
+.unknown { --accent: #84919b; background: #edf0f3; color: #4a5863; }
+.card h2 { margin: 0; font-size: 21px; overflow-wrap: anywhere; }
+.card .badge { display: inline-block; margin: 10px 0; font-weight: 700; font-size: 13px; }
+dl { margin: 8px 0 18px; }
+dl div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; padding: 8px 0; }
+dd { margin: 0; font-weight: 700; }
+.card time { font-size: 13px; }
+#status { line-height: 1.7; overflow-wrap: anywhere; }
+footer { margin-top: 32px; color: #526575; font-size: 12px; line-height: 1.8; }
+@media (max-width: 480px) { .container { padding: 24px 16px; } .summary { padding: 22px; } .controls label { width: 100%; } select { flex: 1; min-width: 0; } }
